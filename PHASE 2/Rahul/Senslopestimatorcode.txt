@@ -1,0 +1,28 @@
+def sens_slope(x, y):
+  """
+  Calculates the Sen's slope for a given set of data points.
+
+  Args:
+      x (list): List of independent variable values.
+      y (list): List of dependent variable values.
+
+  Returns:
+      float: The Sen's slope estimate.
+  """
+  n = len(x)
+  slopes = []
+  for i in range(n):
+    for j in range(i + 1, n):
+      # Calculate slope for each pair of points
+      slope = (y[j] - y[i]) / (x[j] - x[i])
+      slopes.append(slope)
+
+  # Median of the slopes is the Sen's slope estimate
+  return np.median(slopes)
+
+# Example usage
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 3, 5, 7]
+
+slope = sens_slope(x, y)
+print(f"Sen's Slope: {slope}")

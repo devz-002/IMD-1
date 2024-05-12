@@ -1,0 +1,15 @@
+import numpy as np
+import pyhomogeneity as hg
+
+# Sample data (replace with your actual data)
+data = np.random.rand(100)  # 100 random data points
+
+# Perform the Pettitt test (assuming significance level of 0.05)
+result = hg.pettitt_test(data)
+
+# Print the results
+print("Change point:", result.cp)
+print("p-value:", result.p)
+print("Homogeneity (True for no change point):", result.h)
+print("U statistic:", result.U)
+print("Mean values before (mu1) and after (mu2) change point:", result.avg)

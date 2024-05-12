@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Assuming a tab-delimited text file with a header row
+df = pd.read_csv("data.txt", delimiter="\t")
+
+# Remove any rows with missing values in the "Age" column
+df = df.dropna(subset=["Age"])
+
+# Save as a CSV file without an index column
+df.to_csv("cleaned_data.csv", index=False)

@@ -1,0 +1,18 @@
+import numpy as np
+import pymannkendall as mk
+
+# Sample data (replace with your actual data)
+data = np.random.rand(100)  # 100 random data points
+
+# Perform the Mann-Kendall test
+result = mk.original_test(data)
+
+# Print the results
+print("Trend:", result.trend)
+print("H statistic (trend presence):", result.h)
+print("p-value:", result.p)
+print("Z statistic (normalized test statistic):", result.z)
+print("Tau (Kendall Tau):", result.Tau)
+print("S (Mann-Kendall's score):", result.s)
+print("Slope (Theil-Sen estimator):", result.slope)
+print("Intercept (Kendall-Theil Robust Line):", result.intercept)
